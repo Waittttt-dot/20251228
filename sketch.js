@@ -647,6 +647,18 @@ function draw() {
   // 由於使用了 translate，這裡的座標設為圖片中心點的負偏移量
   image(spriteSheet, -frameWidth / 2, -frameHeight / 2, frameWidth, frameHeight, sx, 0, frameWidth, frameHeight);
   pop();
+
+  if (bgImg === background2Img && quizState === 'COMPLETED') {
+    push();
+    rectMode(CORNER);
+    fill(0, 200);
+    rect(0, 0, width, height);
+    fill(255);
+    textSize(100);
+    textAlign(CENTER, CENTER);
+    text("通關成功！", width / 2, height / 2);
+    pop();
+  }
 }
 
 function checkAnswer() {
